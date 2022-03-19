@@ -22,6 +22,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import ShopMainScreen from '../screens/ShopMainScreen';
+import CartScreen from '../screens/CartScreen';
 
 export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
     return (
@@ -68,7 +69,7 @@ function BottomTabNavigator() {
             }}>
             <BottomTab.Screen
                 name="TabOne"
-                component={ShopMainScreen}
+                component={CartScreen}
                 options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
                     title: 'main',
                     tabBarIcon: ({color})  => <TabBarIcon name="home" color={color}/>,
