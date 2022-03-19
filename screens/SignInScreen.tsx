@@ -2,8 +2,10 @@ import React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, TouchableOpacity, Pressable } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { AppContext } from '../components/AppContext';
-export default function SignInScreen() {
-  const {state, update} = React.useContext(AppContext);
+import Color from '../constants/Color';
+
+export default function SignInScreen({ navigation }) {
+  //const {state, update} = React.useContext(AppContext);
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../assets/images/logo.jpg")} />
@@ -20,12 +22,12 @@ export default function SignInScreen() {
                 placeholder='Password'>
             </TextInput>
             <Text style={{fontSize:12, margin:5, textAlign:'right', fontWeight:'bold'}} >Forget Password?</Text>
-            <Pressable style={styles.button} onPress={()=>Alert.alert("Sign In Button Pressed")}>
+            <Pressable style={styles.button} onPress={()=>navigation.navigate("Root")}>
                 <Text style={{color:'#FFFFFF', fontWeight:'bold'}}>Sign In</Text>
             </Pressable>
             <Text style={{fontSize:10, marginTop:20, textAlign:'center'}} >Don't have an account?</Text>
-            <Pressable onPress={()=>Alert.alert("Sign In")}>
-                <Text style={{fontSize:10, marginTop:5, color:'#99DE9F', textAlign:'center',fontWeight:'bold'}}>Sign Up</Text>
+            <Pressable onPress={()=>navigation.navigate("SignUpScreen")}>
+                <Text style={{fontSize:10, marginTop:5, color:Color.themeColorGreen, textAlign:'center',fontWeight:'bold'}}>Sign Up</Text>
             </Pressable>
       </View>
     </View>
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#99DE9F',
+    backgroundColor: Color.themeColorGreen,
   },
   logo: {
     width: 90,
@@ -84,7 +86,7 @@ input: {
 },
 button: {
     marginTop: 10,
-    backgroundColor: '#99DE9F',
+    backgroundColor: Color.themeColorGreen,
     borderRadius: 10,
     height: 40,
     justifyContent: 'center',

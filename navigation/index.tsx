@@ -38,17 +38,22 @@ export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName
  * A root stack navigator is often used for displaying modals on top of all other content.
  * https://reactnavigation.org/docs/modal
  */
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const MainMenuStack = createNativeStackNavigator();
+const screenOptions = {
+    headerShown: false,
+  };
 
 function RootNavigator() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} options={{headerShown: false}}/>
-            <Stack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Oops!'}}/>
-            <Stack.Group screenOptions={{presentation: 'modal'}}>
-                <Stack.Screen name="Modal" component={ModalScreen}/>
-            </Stack.Group>
-        </Stack.Navigator>
+        <MainMenuStack.Navigator initialRouteName='SignInScreen' screenOptions={screenOptions}>
+            <MainMenuStack.Screen name="Root" component={BottomTabNavigator} options={{headerShown: false}}/>
+            <MainMenuStack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Oops!'}}/>
+            <MainMenuStack.Group screenOptions={{presentation: 'modal'}}>
+                <MainMenuStack.Screen name="Modal" component={ModalScreen}/>
+            </MainMenuStack.Group>
+            <MainMenuStack.Screen name="SignInScreen" component={SignInScreen}/>
+            <MainMenuStack.Screen name="SignUpScreen" component={SignUpScreen}/>
+        </MainMenuStack.Navigator>
     );
 }
 
@@ -66,28 +71,28 @@ function BottomTabNavigator() {
             initialRouteName="TabOne"
             screenOptions={{
                 tabBarActiveTintColor: Colors[colorScheme].tint,
+                //headerShown:false
             }}>
             <BottomTab.Screen
                 name="TabOne"
                 component={CartScreen}
                 options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
-                    title: 'main',
+                    title:"Main",
                     tabBarIcon: ({color})  => <TabBarIcon name="home" color={color}/>,
-                    headerRight: () => (
-                        <Pressable
-                            onPress={() => navigation.navigate('Modal')}
-                            style={({pressed}) => ({
-                                opacity: pressed ? 0.5 : 1,
-                            })}>
-                            <FontAwesome
-                                name="info-circle"
-                                size={25}
-                                color={Colors[colorScheme].text}
-                                style={{marginRight: 15}}
-                            />
-                        </Pressable>
-                    ),
-                    headerShown:false
+                    // headerRight: () => (
+                    //     <Pressable
+                    //         onPress={() => navigation.navigate('Modal')}
+                    //         style={({pressed}) => ({
+                    //             opacity: pressed ? 0.5 : 1,
+                    //         })}>
+                    //         <FontAwesome
+                    //             name="info-circle"
+                    //             size={25}
+                    //             color={Colors[colorScheme].text}
+                    //             style={{marginRight: 15}}
+                    //         />
+                    //     </Pressable>
+                    // ),
                 })}
             />
             <BottomTab.Screen
@@ -110,7 +115,7 @@ function BottomTabNavigator() {
             />
             <BottomTab.Screen
                 name="Me"
-                component={ProfileScreen}
+                component={TabTwoScreen}
                 options={{
                     tabBarIcon: ({color}) => <TabBarIcon name="user" color={color}/>,
                     headerShown:false

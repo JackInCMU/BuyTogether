@@ -5,6 +5,7 @@ import { AppContextInterface, createCtx } from './components/AppContext';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import SignUpNavigation from './navigation/SignUpNavigation';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -33,7 +34,8 @@ export default function App() {
       <AppContextProvider>
         <SafeAreaProvider>
           <Navigation colorScheme={colorScheme}/>
-          <StatusBar />
+          {/* <SignUpNavigation /> */}
+          {/* <StatusBar /> */}
         </SafeAreaProvider>
       </AppContextProvider>
     );

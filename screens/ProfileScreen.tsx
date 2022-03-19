@@ -13,7 +13,7 @@ export default function ProfileScreen() {
   //   );
   // } else if (state === 'signin') {
     return (
-      SignUpScreen()
+      <SignInScreen />
     )
   // }
 }
