@@ -18,6 +18,9 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import {RootStackParamList, RootTabParamList, RootTabScreenProps} from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import ProfileScreen from '../screens/ProfileScreen';
+import SignInScreen from '../screens/SignInScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 
 export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
     return (
@@ -55,7 +58,6 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
     const colorScheme = useColorScheme();
-
     // @ts-ignore
     return (
         <BottomTab.Navigator
@@ -91,6 +93,7 @@ function BottomTabNavigator() {
                 options={{
                     title: 'message',
                     tabBarIcon: ({color})  => <TabBarIcon name="message1" color={color}/>,
+                    headerShown: false
                 }}
             />
             <BottomTab.Screen
@@ -99,14 +102,15 @@ function BottomTabNavigator() {
                 options={{
                     title: 'order',
                     tabBarIcon: ({color}) => <TabBarIcon name="bars" color={color}/>,
+                    headerShown:false
                 }}
             />
             <BottomTab.Screen
                 name="Me"
-                component={TabTwoScreen}
+                component={ProfileScreen}
                 options={{
-                    title: 'me',
                     tabBarIcon: ({color}) => <TabBarIcon name="user" color={color}/>,
+                    headerShown:false
                 }}
             />
         </BottomTab.Navigator>
