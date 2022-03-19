@@ -21,6 +21,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import ProfileScreen from '../screens/ProfileScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import ShopMainScreen from '../screens/ShopMainScreen';
 
 export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
     return (
@@ -67,7 +68,7 @@ function BottomTabNavigator() {
             }}>
             <BottomTab.Screen
                 name="TabOne"
-                component={TabOneScreen}
+                component={ShopMainScreen}
                 options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
                     title: 'main',
                     tabBarIcon: ({color})  => <TabBarIcon name="home" color={color}/>,
@@ -85,6 +86,7 @@ function BottomTabNavigator() {
                             />
                         </Pressable>
                     ),
+                    headerShown:false
                 })}
             />
             <BottomTab.Screen
