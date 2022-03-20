@@ -175,10 +175,7 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                 </View>
                             </View>
                         </View>
-                    </View>                    
-                    <View style={styles.test}>
-                        <View style ={styles.test_inner}></View>
-                    </View>
+                    </View> 
                 </ScrollView>
 
             </View>
@@ -298,15 +295,4 @@ const styles = StyleSheet.create({
         // background color must be set
         backgroundColor : "#0000" 
     },
-    test:{
-        backgroundColor:'transparent',
-        flexDirection:'column',
-        alignItems:'center'
-    },
-    test_inner:{
-        width:100,
-        height:10,
-        backgroundColor:'orange'
-    }
-
 });
