@@ -75,10 +75,11 @@ function BottomTabNavigator() {
             }}>
             <BottomTab.Screen
                 name="TabOne"
-                component={CartScreen}
+                component={ShopMainScreen}
                 options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
                     title:"Main",
                     tabBarIcon: ({color})  => <TabBarIcon name="home" color={color}/>,
+                    headerShown:false,
                     // headerRight: () => (
                     //     <Pressable
                     //         onPress={() => navigation.navigate('Modal')}
