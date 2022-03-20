@@ -1,17 +1,12 @@
-import React, { useReducer, useState } from 'react';
+import React from 'react';
 import { StyleSheet, Image,TextInput, ScrollView} from 'react-native';
-import EditScreenInfo from '../components/EditScreenInfo';
 import { View ,Text} from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import {ScaleSize} from 'react-native-scale-size';
 import { Feather } from '@expo/vector-icons';
-import { SearchBar } from 'react-native-elements/dist/searchbar/SearchBar';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { color } from 'react-native-elements/dist/helpers';
-import Color from '../constants/Color';
-  
-  
+
 
 export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'>){
     return (
@@ -28,7 +23,7 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                 <Ionicons name="chevron-back" size={30} color="#085B26" style= {{backgroundColor:'transparent', paddingTop:8, marginRight:12}}/>
                 <View style = {styles.SearchBar}>
                     <Feather name="search" size={20} color="#bdbdbd" style ={{height:36, paddingTop:6, paddingLeft:6}}/>
-                    <TextInput placeholder='search goods' style ={{backgroundColor:'transparent', marginLeft:5, fontSize:14}}></TextInput>
+                    <TextInput placeholder='search goods' style ={{backgroundColor: 'transparent', marginLeft: 5, fontSize: 14}}/>
                 </View>
                 <AntDesign name="shoppingcart" size={30} color="#085B26" style = {{height:36, paddingTop:9, paddingLeft:18}} />
             </View>
@@ -79,8 +74,8 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                         <Feather name="plus-square" size={35} color ='#4CAD73'/>
                                     </View>
                                 </View>
-                            </View> 
-                        </View>   
+                            </View>
+                        </View>
 
                         <View style={styles.shadow}>
                             <View style={styles.item}>
@@ -95,7 +90,7 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                     <View style = {styles.item_plus}>
                                         <Feather name="minus-square" size={20} color="#4CAD73"/>
                                         <Text style={{backgroundColor:'#d6ecdf',width:20, textAlign:'center'}}>4</Text>
-                                        <Feather name="plus-square" size={20} color ='#4CAD73'/>  
+                                        <Feather name="plus-square" size={20} color ='#4CAD73'/>
                                     </View>
                                 </View>
                             </View>
@@ -117,8 +112,8 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                         <Feather name="plus-square" size={35} color ='#4CAD73'/>
                                     </View>
                                 </View>
-                            </View> 
-                        </View>   
+                            </View>
+                        </View>
 
                         <View style={styles.shadow}>
                             <View style={styles.item}>
@@ -138,7 +133,7 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                         </View>
                     </View>
 
-                    
+
                     <View style={{flexDirection:'row',justifyContent:'space-evenly', backgroundColor:'transparent'}}>
                         <View style={styles.shadow}>
                             <View style={styles.item}>
@@ -154,8 +149,8 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                         <Feather name="plus-square" size={35} color ='#4CAD73'/>
                                     </View>
                                 </View>
-                            </View> 
-                        </View>   
+                            </View>
+                        </View>
 
                         <View style={styles.shadow}>
                             <View style={styles.item}>
@@ -170,12 +165,12 @@ export default function ShopMainScreen({navigation}: RootTabScreenProps<'TabOne'
                                     <View style = {styles.item_plus}>
                                         <Feather name="minus-square" size={20} color="#4CAD73"/>
                                         <Text style={{backgroundColor:'#d6ecdf',width:20, textAlign:'center'}}>4</Text>
-                                        <Feather name="plus-square" size={20} color ='#4CAD73'/>  
+                                        <Feather name="plus-square" size={20} color ='#4CAD73'/>
                                     </View>
                                 </View>
                             </View>
                         </View>
-                    </View> 
+                    </View>
                 </ScrollView>
 
             </View>
@@ -206,14 +201,14 @@ const styles = StyleSheet.create({
         width:350,
     },
     SearchBar:{
-        flexDirection:'row', 
-        backgroundColor:'#ffffff', 
+        flexDirection:'row',
+        backgroundColor:'#ffffff',
         width:250,
         height:36,
         borderWidth:1,
         borderColor:'#085B26',
         borderRadius:10,
-        marginTop:8,   
+        marginTop:8,
     },
     locationbutton:{
         color: '#84A883',
@@ -227,8 +222,8 @@ const styles = StyleSheet.create({
     category:{
         fontWeight:'700',
         color:'#085B26',
-        marginLeft:25, 
-        backgroundColor:'#ffffff', 
+        marginLeft:25,
+        backgroundColor:'#ffffff',
         marginTop:5,
     },
     highlight:{
@@ -293,6 +288,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 10,
         elevation: 2,
         // background color must be set
-        backgroundColor : "#0000" 
+        backgroundColor : "#0000"
     },
 });

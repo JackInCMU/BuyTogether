@@ -1,11 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-//import react in our code.]
-//import all the components we are going to use.
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import {Card} from "react-native-elements";
-import {color} from "react-native-elements/dist/helpers";
-
 export default function EditScreenInfo({path}: { path: string }) {
     return (
         <SafeAreaView style={styles.container}>
