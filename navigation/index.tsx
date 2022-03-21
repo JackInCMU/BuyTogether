@@ -3,31 +3,49 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import {FontAwesome, Ionicons, MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavigationContainer, DefaultTheme, DarkTheme} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import * as React from 'react';
-import {ColorSchemeName} from 'react-native';
-import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import {RootStackParamList, RootTabParamList, RootTabScreenProps} from '../types';
-import LinkingConfiguration from './LinkingConfiguration';
-import SignInScreen from '../screens/SignInScreen';
-import SignUpScreen from '../screens/SignUpScreen';
-import CartScreen from '../screens/CartScreen';
-import Color from '../constants/Color';
-import ShopMainScreen from '../screens/ShopMainScreen';
+import {
+  FontAwesome,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from "react";
+import { ColorSchemeName } from "react-native";
+import useColorScheme from "../hooks/useColorScheme";
+import ModalScreen from "../screens/ModalScreen";
+import NotFoundScreen from "../screens/NotFoundScreen";
+import TabTwoScreen from "../screens/TabTwoScreen";
+import {
+  RootStackParamList,
+  RootTabParamList,
+  RootTabScreenProps,
+} from "../types";
+import LinkingConfiguration from "./LinkingConfiguration";
+import SignInScreen from "../screens/SignInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
+import CartScreen from "../screens/CartScreen";
+import Color from "../constants/Color";
+import ShopMainScreen from "../screens/ShopMainScreen";
 import MainPageScreen from "../screens/MainPageScreen";
 
-export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
+export default function Navigation({
+  colorScheme,
+}: {
+  colorScheme: ColorSchemeName;
+}) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator/>
+      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+    >
+      <RootNavigator />
     </NavigationContainer>
   );
 }
@@ -43,14 +61,28 @@ const screenOptions = {
 
 function RootNavigator() {
   return (
-    <MainMenuStack.Navigator initialRouteName='SignInScreen' screenOptions={screenOptions}>
-      <MainMenuStack.Screen name="Root" component={BottomTabNavigator} options={{headerShown: false}}/>
-      <MainMenuStack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Oops!'}}/>
-      <MainMenuStack.Group screenOptions={{presentation: 'modal'}}>
-        <MainMenuStack.Screen name="Modal" component={ModalScreen}/>
+    <MainMenuStack.Navigator
+      initialRouteName="SignInScreen"
+      screenOptions={screenOptions}
+    >
+      <MainMenuStack.Screen
+        name="Root"
+        component={BottomTabNavigator}
+        options={{ headerShown: false }}
+      />
+      <MainMenuStack.Screen
+        name="NotFound"
+        component={NotFoundScreen}
+        options={{ title: "Oops!" }}
+      />
+      <MainMenuStack.Group screenOptions={{ presentation: "modal" }}>
+        <MainMenuStack.Screen name="Modal" component={ModalScreen} />
       </MainMenuStack.Group>
-      <MainMenuStack.Screen name="SignInScreen" component={SignInScreen}/>
-      <MainMenuStack.Screen name="SignUpScreen" component={SignUpScreen}/>
+      <MainMenuStack.Screen name="SignInScreen" component={SignInScreen} />
+      <MainMenuStack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <MainMenuStack.Screen name="CartScreen" component={CartScreen} />
+      <MainMenuStack.Screen name="ShopMainScreen" component={ShopMainScreen} />
+      <MainMenuStack.Screen name="MainPageScreen" component={MainPageScreen} />
     </MainMenuStack.Navigator>
   );
 }
@@ -68,49 +100,63 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="TabOne"
       screenOptions={{
-        tabBarActiveTintColor:  Color.fontGreen,
+        tabBarActiveTintColor: Color.fontGreen,
         headerShown: false,
-        tabBarLabelStyle: {fontWeight:'bold', fontSize:12},
-        tabBarStyle: {backgroundColor: Color.themeColorGreen, height:85, paddingTop: 8},
-      }}>
+        tabBarLabelStyle: { fontWeight: "bold", fontSize: 12 },
+        tabBarStyle: {
+          backgroundColor: Color.themeColorGreen,
+          height: 85,
+          paddingTop: 8,
+        },
+      }}
+    >
       <BottomTab.Screen
         name="TabOne"
         component={MainPageScreen}
-        options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
+        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
           title: "Main",
-          tabBarIcon: () => <Ionicons name="home" size={30} color={Color.fontGreen}/>,
+          tabBarIcon: () => (
+            <Ionicons name="home" size={30} color={Color.fontGreen} />
+          ),
         })}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
-          title: 'Message',
-          tabBarIcon: () => <MaterialCommunityIcons name="message-processing" style={{paddingTop: 5}} size={30}
-                                                    color={Color.fontGreen}/>,
+          title: "Message",
+          tabBarIcon: () => (
+            <MaterialCommunityIcons
+              name="message-processing"
+              style={{ paddingTop: 5 }}
+              size={30}
+              color={Color.fontGreen}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Message"
         component={TabTwoScreen}
         options={{
-          title: 'Order',
-          tabBarIcon: () => <Ionicons name="document-text" size={30} color={Color.fontGreen}/>,
-          headerShown: false
+          title: "Order",
+          tabBarIcon: () => (
+            <Ionicons name="document-text" size={30} color={Color.fontGreen} />
+          ),
+          headerShown: false,
         }}
       />
       <BottomTab.Screen
         name="Me"
         component={TabTwoScreen}
         options={{
-          title: 'Me',
-          tabBarIcon: () => <FontAwesome name="user" size={30} color={Color.fontGreen}/>,
-          headerShown: false
+          title: "Me",
+          tabBarIcon: () => (
+            <FontAwesome name="user" size={30} color={Color.fontGreen} />
+          ),
+          headerShown: false,
         }}
       />
     </BottomTab.Navigator>
-
-
   );
 }
-
