@@ -45,16 +45,7 @@ export default function MainPageScreen({
       </View>
 
       <View style={styles.header}>
-        <Ionicons
-          name="chevron-back"
-          size={30}
-          color="#085B26"
-          style={{
-            backgroundColor: "transparent",
-            paddingTop: 8,
-            marginRight: 12,
-          }}
-        />
+
         <View style={styles.SearchBar}>
           <Feather
             name="search"
@@ -76,7 +67,7 @@ export default function MainPageScreen({
             name="shoppingcart"
             size={30}
             color="#085B26"
-            style={{ height: 36, paddingTop: 9, paddingLeft: 18 }}
+            style={{ height: 36, paddingTop: 9, paddingLeft: 6 }}
           />
         </Pressable>
       </View>
@@ -492,7 +483,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     // justifyItems:'center',
     backgroundColor: "#ffffff",
-    width: 250,
+    width: 300,
+      marginLeft:10,
     height: 36,
     borderWidth: 1,
     borderColor: "#085B26",
@@ -501,13 +493,14 @@ const styles = StyleSheet.create({
   },
   locationbutton: {
     color: "#84A883",
+      marginLeft:6
   },
 
   locationtext: {
     color: "#4A6563",
     textAlign: "center",
     fontSize: 12,
-    paddingHorizontal: 3,
+    paddingHorizontal: 3,marginLeft:2,
   },
 
   card_container: {
