@@ -1,10 +1,21 @@
-1. sudo npm install expo
-2. yarn add react-native-elements
-3. yarn add react native
+# 17781 BuyTogether App
 
-4. expo install react-navigation
-6. _expo init (create project) -> BuyTogether_ (you don't need to run this in terminal)
-7. expo start
+- Repository of CMU spring 2022 course project
+- Contributors: Jiaxiang Wu, Mufei Han, Zhiqi Li, Zixin Yin
 
+## Environment Configuration
+
+```python
+sudo npm install expo
+yarn add react-native-elements
+yarn add react native
+expo install react-navigation
+#(you don't need to run this in terminal)
+_expo init (create project) -> BuyTogether_ 
+
+expo start
 yarn add react-native-scale-size
-yarn add react-native-numeric-input react-native-vector-icons
+```
+
+
+
