@@ -12,6 +12,7 @@ yarn add react native
 expo install react-navigation
 #(you don't need to run this in terminal)
 _expo init (create project) -> BuyTogether_ 
+expo install firebase
 
 expo start
 yarn add react-native-scale-size
