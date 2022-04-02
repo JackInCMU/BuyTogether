@@ -6,23 +6,20 @@ import {
   ScrollView,
   Pressable,
 } from "react-native";
-import EditScreenInfo from "../components/EditScreenInfo";
 import { View, Text } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 import { ScaleSize } from "react-native-scale-size";
 import { Feather } from "@expo/vector-icons";
-import { SearchBar } from "react-native-elements/dist/searchbar/SearchBar";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
-import color from "../constants/Color";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Headers from "../components/Headers";
 import {RandomAvatar} from "../components/DefaultAvatar";
 
 export default function MainPageScreen({
   navigation,
-}: RootTabScreenProps<"TabOne">) {
+}: RootTabScreenProps<"General">) {
   return (
     <View style={styles.container}>
       <View

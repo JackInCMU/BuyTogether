@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Image, Button, Alert, Pressable } from "react-native";
+import { StyleSheet, Image, Button, Alert } from "react-native";
 import { View, Text } from "../components/Themed";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import {Ionicons} from "@expo/vector-icons";
 import Color from "../constants/Color";
 import GreySeparator from "../components/GreySeparator";
 import {RandomAvatar} from "../components/DefaultAvatar";
@@ -11,7 +11,7 @@ import {RootTabScreenProps} from "../types";
 
 export default function CartScreen({
   navigation,
-}: RootTabScreenProps<"TabOne">) {
+}: RootTabScreenProps<"General">) {
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center" }}>
@@ -178,7 +178,7 @@ export default function CartScreen({
           <Text style={styles.receiptText}>$21.54</Text>
         </View>
         {/* checkout button */}
-        <View style={styles.checkoutButton}>
+        <View style={styles.saveButton}>
           <Button
             onPress={() => Alert.alert("Check Out!")}
             title="Check Out"
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   receiptText: {
     fontSize: 16,
   },
-  checkoutButton: {
+  saveButton: {
     backgroundColor: "#085B26",
     width: "35%",
     alignSelf: "center",

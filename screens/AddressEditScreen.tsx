@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import {RootTabScreenProps} from "../types";
 import {SearchBarWithAutoComplete} from "../components/SearchBarWithAutoComplete";
 
-export default function AddressEditScreen({navigation}: RootTabScreenProps<"TabOne">) {
+export default function AddressEditScreen({navigation}: RootTabScreenProps<"General">) {
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center" }}>
@@ -30,7 +30,7 @@ export default function AddressEditScreen({navigation}: RootTabScreenProps<"TabO
               color="#085B26"
             />
           </TouchableOpacity>
-          <Text style={styles.smalltitle}>BuyTogether</Text>
+          <Text style={styles.smallTitle}>BuyTogether</Text>
         </View>
         <View
           style={{
@@ -95,20 +95,14 @@ const styles = StyleSheet.create({
     color: Color.fontGreen,
     fontSize: 16,
     fontWeight: "bold",
-    // textAlign: "center",
-    // alignItems: "center",
-    // justifyContent: "space-evenly",
     marginLeft: 24,
     marginTop: 18,
 
   },
-  smalltitle: {
+  smallTitle: {
     color: Color.fontGreen,
     fontSize: 16,
     fontWeight: "bold",
-    // textAlign: "center",
-    // alignItems: "center",
-    // justifyContent: "space-evenly",
     marginLeft: 80,
     marginTop: 6,
     backgroundColor: Color.themeColorGreen,

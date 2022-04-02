@@ -14,7 +14,7 @@ import VipBar from "../components/VipBar";
 import ProfileBar from "../components/ProfileBar";
 import {RandomAvatar} from "../components/DefaultAvatar";
 
-export default function Profile({ navigation, }: RootTabScreenProps<"TabOne">) {
+export default function Profile({ navigation, }: RootTabScreenProps<"General">) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>

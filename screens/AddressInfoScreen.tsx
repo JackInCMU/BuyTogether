@@ -1,19 +1,16 @@
-import React, {useState} from "react";
-import {StyleSheet, Image, Button, Alert, Pressable, TextInput, ScrollView} from "react-native";
+import React from "react";
+import {StyleSheet, Button, Alert,  TextInput} from "react-native";
 import { View, Text } from "../components/Themed";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import Color from "../constants/Color";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import NumericInput from "react-native-numeric-input";
 // @ts-ignore
 import ModalDropdown from 'react-native-modal-dropdown';
 import {RootTabScreenProps} from "../types";
-import {SearchBarWithAutoComplete} from "../components/SearchBarWithAutoComplete";
-
 
 export default function AddressInfoScreen({
                                      navigation,
-                                   }: RootTabScreenProps<"TabOne">) {
+                                   }: RootTabScreenProps<"General">) {
   return (
       <View style={styles.container}>
         <View style={{ justifyContent: "center" }}>
@@ -36,7 +33,7 @@ export default function AddressInfoScreen({
                   color="#085B26"
               />
             </TouchableOpacity>
-            <Text style={styles.smalltitle}>BuyTogether</Text>
+            <Text style={styles.smallTitle}>BuyTogether</Text>
           </View>
           <View
               style={{
@@ -47,8 +44,6 @@ export default function AddressInfoScreen({
           >
           </View>
         </View>
-
-        <View style={styles.separator} lightColor={Color.themeColorGreen} darkColor="#085B26" />
         <View style={styles.content}>
           <View
               style={[styles.row, { padding: 10, justifyContent: "flex-start" }]}
@@ -66,7 +61,6 @@ export default function AddressInfoScreen({
             </Text>
           </View>
 
-
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <View style={styles.shadow}>
               <View style={styles.item}>
@@ -80,7 +74,6 @@ export default function AddressInfoScreen({
                     defaultValue={'Please select...'}
                     textStyle={styles.dropdownText}>
                 </ModalDropdown>
-
 
                 {/*<View style={styles.name_price_tag}>*/}
                 {/*  <Text style={styles.item_name}>United States</Text>*/}
@@ -148,7 +141,6 @@ export default function AddressInfoScreen({
             </Text>
           </View>
 
-
           <View
               style={[
                 styles.row,
@@ -175,14 +167,10 @@ export default function AddressInfoScreen({
                        placeholderTextColor = "#c4c4c4"
                        placeholder=''>
             </TextInput>
-
           </View>
 
-
-
-
           {/* save button */}
-          <View style={styles.checkoutButton}>
+          <View style={styles.saveButton}>
             <Button
                 onPress={() => Alert.alert("Saved!")}
                 title="Save"
@@ -247,7 +235,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
 
   },
-  smalltitle: {
+  smallTitle: {
     color: Color.fontGreen,
     fontSize: 16,
     paddingBottom: 1,
@@ -268,41 +256,21 @@ const styles = StyleSheet.create({
   locationButton: {
     color: "#84A883",
   },
-  separator: {
-    marginTop: 10,
-    height: 2,
-  },
   content: {
     flex: 1,
+    marginTop: 12,
   },
   receiptText: {
     fontSize: 16,
   },
-  checkoutButton: {
+  saveButton: {
     backgroundColor: "#085B26",
     width: "35%",
     alignSelf: "center",
     borderRadius: 10,
     margin: 20,
   },
-  buyStatus: {
-    backgroundColor: "#99DE9F",
-    alignContent: "center",
-    alignItems: "center",
-    marginRight: 20,
-    width: 120,
-    height: 40,
-    textAlign: "center",
-    justifyContent: "center",
-    borderRadius: 10,
-    alignSelf: "center",
-  },
-  smallTitle: {
-    color: Color.fontGreen,
-    fontWeight: "bold",
-    padding: 5,
-    fontSize: 16,
-  },
+
   shadow: {
     paddingLeft: 20,
     marginTop:1,
@@ -338,19 +306,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000000",
     elevation: 10,
   },
-  item_pic: {
-    aspectRatio: 1.2,
-    width: 90,
-  },
-  item_plus: {
-    flexDirection: "row",
-    width: 30,
-    height: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: 60,
-    marginTop: 5,
-  },
+
   dropdown: {
     flexDirection: "column",
     width: 1000,
@@ -362,32 +318,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
 
   },
-  dropdownList: {
-    flexDirection: "column",
-    width: 120,
-    alignItems: "flex-start",
-    paddingVertical: 0,
-    paddingLeft: 0,
-    paddingTop:8,
-    backgroundColor: "#f2f2f2",
-    height: 125,
-    justifyContent: "space-around",
 
-  },
   dropdownText: {
     marginBottom: 0,
     fontWeight: "400",
     fontSize: 16,
   },
-  price: {
-    fontWeight: "700",
-    fontSize: 13,
-    color: "#4CAD73",
-  },
-  unit: {
-    color: "#bdbdbd",
-    fontSize: 12,
-  },
+
   input: {
     marginTop: 3,
     paddingLeft:8,

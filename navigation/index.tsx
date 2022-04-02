@@ -21,13 +21,10 @@ import { ColorSchemeName } from "react-native";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/AddressEditScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
 import {
-  RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
 } from "../types";
-import LinkingConfiguration from "./LinkingConfiguration";
 import SignInScreen from "../screens/SignInScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import CartScreen from "../screens/CartScreen";
@@ -36,6 +33,7 @@ import ShopMainScreen from "../screens/ShopMainScreen";
 import MainPageScreen from "../screens/MainPageScreen";
 import Profile from "../screens/Profile";
 import AddressInfoScreen from "../screens/AddressInfoScreen";
+import AddressEditScreen from "../screens/AddressEditScreen";
 
 export default function Navigation({
   colorScheme,
@@ -44,7 +42,6 @@ export default function Navigation({
 }) {
   return (
     <NavigationContainer
-      linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
       <RootNavigator />
@@ -77,9 +74,6 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
       />
-      <MainMenuStack.Group screenOptions={{ presentation: "modal" }}>
-        <MainMenuStack.Screen name="Modal" component={ModalScreen} />
-      </MainMenuStack.Group>
       <MainMenuStack.Screen name="SignInScreen" component={SignInScreen} />
       <MainMenuStack.Screen name="SignUpScreen" component={SignUpScreen} />
       <MainMenuStack.Screen name="CartScreen" component={CartScreen} />
@@ -99,10 +93,9 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-  // @ts-ignore
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Main"
       screenOptions={{
         tabBarActiveTintColor: Color.fontGreen,
         headerShown: false,
@@ -115,9 +108,9 @@ function BottomTabNavigator() {
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="Main"
         component={MainPageScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
+        options={({ navigation }: RootTabScreenProps<"Main">) => ({
           title: "Main",
           tabBarIcon: () => (
             <Ionicons name="home" size={30} color={Color.fontGreen} />
@@ -125,7 +118,7 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Message"
         component={AddressInfoScreen}
         options={{
           title: "Message",
@@ -140,8 +133,8 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Message"
-        component={ModalScreen}
+        name="Order"
+        component={AddressEditScreen}
         options={{
           title: "Order",
           tabBarIcon: () => (

@@ -22,7 +22,7 @@ import SearchBar from "../components/SearchBar"
 
 export default function ShopMainScreen({
   navigation,
-}: RootTabScreenProps<"TabOne">) {
+}: RootTabScreenProps<"General">) {
   return (
     <View style={styles.container}>
       <View
