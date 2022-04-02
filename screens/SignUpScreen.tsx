@@ -3,6 +3,7 @@ import { StyleSheet, Image, TextInput, Button, Alert, TouchableOpacity, Pressabl
 import { Text, View } from '../components/Themed';
 import { AppContext } from '../components/AppContext';
 import Color from '../constants/Color';
+// @ts-ignore
 export default function SignUpScreen({navigation}) {
   //const {state, update} = React.useContext(AppContext);
   return (

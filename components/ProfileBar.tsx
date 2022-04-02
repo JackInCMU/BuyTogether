@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, Text } from "../components/Themed";
-import { StyleSheet } from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import Color from "../constants/Color";
@@ -15,9 +15,9 @@ const ProfileBar: FC<Props> = (props) => {
       <GreySeparator />
       <View style={styles.bar}>
         <MaterialIcons name="location-pin" size={24} color={Color.fontGreen} />
-        <View style={{ backgroundColor: Color.white, width: 250, marginLeft: 20 }}>
+        <Pressable style={{ backgroundColor: Color.white, width: 250, marginLeft: 20 }}>
           <Text style={{ fontSize: 18, fontWeight: "700", color: Color.fontGreen }}>Delivery Address</Text>
-        </View>
+        </Pressable>
         <ForwardButton size={25} color={Color.fontGreen} />
       </View>
       <GreySeparator />

@@ -4,6 +4,7 @@ import { Text, View } from '../components/Themed';
 import { AppContext } from '../components/AppContext';
 import Color from '../constants/Color';
 
+// @ts-ignore
 export default function SignInScreen({ navigation }) {
   //const {state, update} = React.useContext(AppContext);
   return (
@@ -14,11 +15,11 @@ export default function SignInScreen({ navigation }) {
         <Text style={styles.cardTitle} >Welcome Back</Text>
         <Text style={styles.hintText}>Please log in to your account</Text>
             <TextInput style={styles.input}
-                placeholderTextColor = "#ccc" 
+                placeholderTextColor = "#ccc"
                 placeholder='Username'>
             </TextInput>
             <TextInput style={styles.input}
-                placeholderTextColor = "#ccc" 
+                placeholderTextColor = "#ccc"
                 placeholder='Password'>
             </TextInput>
             <Text style={{fontSize:12, margin:5, textAlign:'right', fontWeight:'bold'}} >Forget Password?</Text>

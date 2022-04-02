@@ -9,10 +9,10 @@ import { RootTabScreenProps } from "../types";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ReturnButton from "../components/ReturnButton";
 import Color from "../constants/Color";
-import DefaultAvatar from "../components/DefaultAvatar";
 import { EvilIcons } from '@expo/vector-icons';
 import VipBar from "../components/VipBar";
 import ProfileBar from "../components/ProfileBar";
+import {RandomAvatar} from "../components/DefaultAvatar";
 
 export default function Profile({ navigation, }: RootTabScreenProps<"TabOne">) {
   return (
@@ -27,7 +27,7 @@ export default function Profile({ navigation, }: RootTabScreenProps<"TabOne">) {
           <Text style={styles.smallTitle}>BuyTogether</Text>
         </View>
       </View>
-      <DefaultAvatar
+      <RandomAvatar
         backgroundColor="#F9D9D2"
         height={120}
         width={120}

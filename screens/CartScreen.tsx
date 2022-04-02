@@ -4,9 +4,10 @@ import { View, Text } from "../components/Themed";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import Color from "../constants/Color";
 import GreySeparator from "../components/GreySeparator";
-import DefaultAvatar from "../components/DefaultAvatar";
+import {RandomAvatar} from "../components/DefaultAvatar";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import NumericInput from "react-native-numeric-input";
+import {RootTabScreenProps} from "../types";
 
 export default function CartScreen({
   navigation,
@@ -57,7 +58,7 @@ export default function CartScreen({
         <View
           style={[styles.row, { padding: 15, justifyContent: "flex-start" }]}
         >
-          <DefaultAvatar backgroundColor="#F9D9D2" />
+          <RandomAvatar/>
           <Text
             style={{
               fontSize: 20,
@@ -188,7 +189,7 @@ export default function CartScreen({
         <View
           style={[styles.row, { padding: 10, justifyContent: "flex-start" }]}
         >
-          <DefaultAvatar backgroundColor="#8380FF" />
+          <RandomAvatar/>
           <Text
             style={{
               fontSize: 20,
@@ -212,7 +213,7 @@ export default function CartScreen({
         <View
           style={[styles.row, { padding: 10, justifyContent: "space-between" }]}
         >
-          <DefaultAvatar backgroundColor="#B78899" />
+          <RandomAvatar/>
           <Text
             style={{
               fontSize: 20,
@@ -334,7 +335,6 @@ const styles = StyleSheet.create({
     height: 70,
     width: 220,
     borderRadius: 10,
-    marginTop: 0,
     overflow: "hidden",
     margin: 10,
     marginTop: 20,

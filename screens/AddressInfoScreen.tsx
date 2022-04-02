@@ -1,20 +1,17 @@
 import React, {useState} from "react";
-import {StyleSheet, Image, Button, Alert, Pressable, TextInput} from "react-native";
+import {StyleSheet, Image, Button, Alert, Pressable, TextInput, ScrollView} from "react-native";
 import { View, Text } from "../components/Themed";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import Color from "../constants/Color";
-import GreySeparator from "../components/GreySeparator";
-import DefaultAvatar from "../components/DefaultAvatar";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import NumericInput from "react-native-numeric-input";
+// @ts-ignore
 import ModalDropdown from 'react-native-modal-dropdown';
-import {Card} from "react-native-elements";
 import {RootTabScreenProps} from "../types";
+import {SearchBarWithAutoComplete} from "../components/SearchBarWithAutoComplete";
 
 
-
-
-export default function CartScreen({
+export default function AddressInfoScreen({
                                      navigation,
                                    }: RootTabScreenProps<"TabOne">) {
   return (

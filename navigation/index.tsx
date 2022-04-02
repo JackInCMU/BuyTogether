@@ -19,10 +19,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
 import useColorScheme from "../hooks/useColorScheme";
-import ModalScreen from "../screens/ModalScreen";
+import ModalScreen from "../screens/AddressEditScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
-import AddressInfoScreen from "../screens/AddressInfoScreen"
 import {
   RootStackParamList,
   RootTabParamList,
@@ -36,6 +35,7 @@ import Color from "../constants/Color";
 import ShopMainScreen from "../screens/ShopMainScreen";
 import MainPageScreen from "../screens/MainPageScreen";
 import Profile from "../screens/Profile";
+import AddressInfoScreen from "../screens/AddressInfoScreen";
 
 export default function Navigation({
   colorScheme,
@@ -141,7 +141,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Message"
-        component={TabTwoScreen}
+        component={ModalScreen}
         options={{
           title: "Order",
           tabBarIcon: () => (

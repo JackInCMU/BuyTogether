@@ -16,10 +16,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
 import color from "../constants/Color";
-import DefaultAvatar from "../components/DefaultAvatar";
-import Color from "../constants/Color";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Headers from "../components/Headers";
+import {RandomAvatar} from "../components/DefaultAvatar";
 
 export default function MainPageScreen({
   navigation,
@@ -255,14 +254,12 @@ export default function MainPageScreen({
                   >
                     Buy with:{" "}
                   </Text>
-                  <DefaultAvatar
-                    backgroundColor="#DDF44B"
+                  <RandomAvatar
                     height={20}
                     width={20}
                     marginLeft={5}
                   />
-                  <DefaultAvatar
-                    backgroundColor="#F9D9D2"
+                  <RandomAvatar
                     height={20}
                     width={20}
                     marginLeft={5}
@@ -335,14 +332,12 @@ export default function MainPageScreen({
                 >
                   Buy with:{" "}
                 </Text>
-                <DefaultAvatar
-                  backgroundColor="#8380FF"
+                <RandomAvatar
                   height={20}
                   width={20}
                   marginLeft={5}
                 />
-                <DefaultAvatar
-                  backgroundColor="#E92B2B"
+                <RandomAvatar
                   height={20}
                   width={20}
                   marginLeft={5}
@@ -413,14 +408,12 @@ export default function MainPageScreen({
                 >
                   Buy with:{" "}
                 </Text>
-                <DefaultAvatar
-                  backgroundColor="#B78899"
+                <RandomAvatar
                   height={20}
                   width={20}
                   marginLeft={5}
                 />
-                <DefaultAvatar
-                  backgroundColor="#00A198"
+                <RandomAvatar
                   height={20}
                   width={20}
                   marginLeft={5}
