@@ -22,6 +22,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import AddressInfoScreen from "../screens/AddressInfoScreen"
 import {
   RootStackParamList,
   RootTabParamList,
@@ -34,6 +35,7 @@ import CartScreen from "../screens/CartScreen";
 import Color from "../constants/Color";
 import ShopMainScreen from "../screens/ShopMainScreen";
 import MainPageScreen from "../screens/MainPageScreen";
+import Profile from "../screens/Profile";
 
 export default function Navigation({
   colorScheme,
@@ -83,6 +85,8 @@ function RootNavigator() {
       <MainMenuStack.Screen name="CartScreen" component={CartScreen} />
       <MainMenuStack.Screen name="ShopMainScreen" component={ShopMainScreen} />
       <MainMenuStack.Screen name="MainPageScreen" component={MainPageScreen} />
+      <MainMenuStack.Screen name="Profile" component={Profile} />
+      <MainMenuStack.Screen name="AddressInfoScreen" component={AddressInfoScreen} />
     </MainMenuStack.Navigator>
   );
 }
@@ -122,7 +126,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabTwo"
-        component={TabTwoScreen}
+        component={AddressInfoScreen}
         options={{
           title: "Message",
           tabBarIcon: () => (
@@ -148,7 +152,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Me"
-        component={TabTwoScreen}
+        component={Profile}
         options={{
           title: "Me",
           tabBarIcon: () => (
