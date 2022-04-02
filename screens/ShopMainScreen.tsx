@@ -11,9 +11,12 @@ import { RootTabScreenProps } from "../types";
 import { ScaleSize } from "react-native-scale-size";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import NumericInput from "react-native-numeric-input";
+import ReturnButton from "../components/ReturnButton";
+import ShoppingCart from "../components/ShopingCart";
+import ItemCard from "../components/ItemCard";
+import Color from "../constants/Color";
+
 
 export default function ShopMainScreen({
   navigation,
@@ -22,13 +25,13 @@ export default function ShopMainScreen({
     <View style={styles.container}>
       <View
         style={{
-          backgroundColor: "#BEE4BE",
+          backgroundColor: Color.themeColorGreen,
           flexDirection: "row",
           width: 150,
           justifyContent: "space-around",
         }}
       >
-        <View style={{ backgroundColor: "#BEE4BE", marginTop: 50 }}>
+        <View style={{ backgroundColor: Color.themeColorGreen, marginTop: 50 }}>
           <Image
             style={styles.shop_icon}
             source={require("../assets/images/walmart.png")}
@@ -36,7 +39,7 @@ export default function ShopMainScreen({
         </View>
         <View
           style={{
-            backgroundColor: "#BEE4BE",
+            backgroundColor: Color.themeColorGreen,
             justifyContent: "center",
             marginTop: 50,
           }}
@@ -46,17 +49,9 @@ export default function ShopMainScreen({
       </View>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons
-            name="chevron-back"
-            size={30}
-            color="#085B26"
-            style={{
-              backgroundColor: "transparent",
-              paddingTop: 8,
-              marginRight: 12,
-            }}
-          />
+          <ReturnButton size={30} color={Color.fontGreen} />
         </TouchableOpacity>
+
         <View style={styles.SearchBar}>
           <Feather
             name="search"
@@ -74,12 +69,7 @@ export default function ShopMainScreen({
           />
         </View>
         <Pressable onPress={() => navigation.navigate("CartScreen")}>
-          <AntDesign
-            name="shoppingcart"
-            size={30}
-            color="#085B26"
-            style={{ height: 36, paddingTop: 9, paddingLeft: 18 }}
-          />
+          <ShoppingCart size={30} color={Color.fontGreen} />
         </Pressable>
       </View>
       <View
@@ -95,7 +85,7 @@ export default function ShopMainScreen({
           style={styles.locationbutton}
           name="location-outline"
           size={12}
-          color="#085B26"
+          color={Color.fontGreen}
         />
         <Text style={styles.locationtext}>Sent to Fifth Avenue, 15213</Text>
       </View>
@@ -104,7 +94,7 @@ export default function ShopMainScreen({
           height: 35,
           marginTop: 15,
           borderBottomWidth: 3,
-          borderBottomColor: "#085B26",
+          borderBottomColor: Color.fontGreen,
           backgroundColor: "#ffffff",
         }}
       >
@@ -114,24 +104,24 @@ export default function ShopMainScreen({
             <View style={styles.highlight}></View>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>Fruits</Text>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>Fruits</Text>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>
               Beverage
             </Text>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>Snacks</Text>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>Snacks</Text>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>Fruits</Text>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>Fruits</Text>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>Diary</Text>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>Diary</Text>
           </View>
           <View style={styles.category}>
-            <Text style={{ fontWeight: "700", color: "#085B26" }}>Fruits</Text>
+            <Text style={{ fontWeight: "700", color: Color.fontGreen }}>Fruits</Text>
           </View>
         </ScrollView>
       </View>
@@ -144,61 +134,8 @@ export default function ShopMainScreen({
               backgroundColor: "transparent",
             }}
           >
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/carrot.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Carrots</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
-
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/chilli.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Chilli</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
+            <ItemCard name={"carrot"} price={0.99} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/carrot.jpeg?alt=media&token=51c2949e-7ca5-4336-88a2-a2e88aada1f2'} />
+            <ItemCard name={"chilli"} price={0.99} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/chilli.jpeg?alt=media&token=fa816f48-ff7a-47c0-9294-b7ddda59964f'} />
           </View>
 
           <View
@@ -208,61 +145,8 @@ export default function ShopMainScreen({
               backgroundColor: "transparent",
             }}
           >
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/onion.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Onion</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
-
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/cucumber.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Cucumber</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
+            <ItemCard name={"onion"} price={0.8} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/onion.jpeg?alt=media&token=6db5db2a-4688-4794-adf2-eceac2ada11b'} />
+            <ItemCard name={"cucumber"} price={0.99} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/cucumber.jpeg?alt=media&token=08131dd6-e988-4b78-bc26-6e7262f72db7'} />
           </View>
 
           <View
@@ -272,61 +156,8 @@ export default function ShopMainScreen({
               backgroundColor: "transparent",
             }}
           >
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/carrot.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Carrots</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
-
-            <View style={styles.shadow}>
-              <View style={styles.item}>
-                <Image
-                  style={styles.item_pic}
-                  source={require("../assets/images/chilli.jpeg")}
-                />
-                <View style={styles.item_tag_box}>
-                  <View style={styles.name_price_tag}>
-                    <Text style={styles.item_name}>Chilli</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.price}>$0.99</Text>
-                      <Text style={styles.unit}> / lb</Text>
-                    </View>
-                  </View>
-                  <View style={styles.item_plus}>
-                    <NumericInput
-                      onChange={(value) => console.log(value)}
-                      totalWidth={60}
-                      totalHeight={30}
-                      iconSize={25}
-                      valueType="integer"
-                      minValue={0}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
+            <ItemCard name={"carrot"} price={0.99} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/carrot.jpeg?alt=media&token=51c2949e-7ca5-4336-88a2-a2e88aada1f2'} />
+            <ItemCard name={"chilli"} price={0.99} unit={"lb"} link={'https://firebasestorage.googleapis.com/v0/b/buytogether-88aa7.appspot.com/o/chilli.jpeg?alt=media&token=fa816f48-ff7a-47c0-9294-b7ddda59964f'} />
           </View>
         </ScrollView>
       </View>
@@ -338,10 +169,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#BEE4BE",
+    backgroundColor: Color.themeColorGreen,
   },
   shop: {
-    color: "#085B26",
+    color: Color.fontGreen,
     fontWeight: "700",
     fontSize: 24,
   },
@@ -362,22 +193,22 @@ const styles = StyleSheet.create({
     width: 250,
     height: 36,
     borderWidth: 1,
-    borderColor: "#085B26",
+    borderColor: Color.fontGreen,
     borderRadius: 10,
     marginTop: 8,
   },
   locationbutton: {
-    color: "#84A883",
+    color: Color.addressGreen,
   },
   locationtext: {
-    color: "#84A883",
+    color: Color.addressGreen,
     textAlign: "center",
     fontSize: 12,
     paddingHorizontal: 3,
   },
   category: {
     fontWeight: "700",
-    color: "#085B26",
+    color: Color.fontGreen,
     marginLeft: 25,
     backgroundColor: "#ffffff",
     marginTop: 5,
@@ -389,61 +220,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
-    backgroundColor: "#085B26",
-  },
-  item: {
-    flexDirection: "column",
-    height: 185,
-    width: 150,
-    borderRadius: 10,
-    marginTop: 20,
-    overflow: "hidden",
-    shadowColor: "#000000",
-    elevation: 10,
-  },
-  item_pic: {
-    aspectRatio: 3 / 2,
-    height: 120,
-  },
-  item_tag_box: {
-    flexDirection: "row",
-    backgroundColor: "#ffffff",
-    height: 65,
-    alignItems: "center",
-    justifyContent: "space-around",
-  },
-  item_plus: {
-    flexDirection: "row",
-    width: 60,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  name_price_tag: {
-    flexDirection: "column",
-    width: 70,
-    alignItems: "flex-start",
-  },
-  item_name: {
-    marginBottom: 5,
-    fontWeight: "600",
-    fontSize: 14,
-  },
-  price: {
-    fontWeight: "700",
-    fontSize: 13,
-    color: "#4CAD73",
-  },
-  unit: {
-    color: "#bdbdbd",
-    fontSize: 12,
-  },
-  shadow: {
-    shadowOffset: { width: 3, height: 5 },
-    shadowColor: "#bdbdbd",
-    shadowOpacity: 10,
-    elevation: 2,
-    // background color must be set
-    backgroundColor: "#0000",
+    backgroundColor: Color.fontGreen,
   },
 });
