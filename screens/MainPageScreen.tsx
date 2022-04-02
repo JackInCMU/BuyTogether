@@ -19,6 +19,7 @@ import color from "../constants/Color";
 import DefaultAvatar from "../components/DefaultAvatar";
 import Color from "../constants/Color";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Headers from "../components/Headers";
 
 export default function MainPageScreen({
   navigation,
@@ -40,7 +41,7 @@ export default function MainPageScreen({
             marginTop: 50,
           }}
         >
-          <Text style={styles.smallTitle}>BuyTogether</Text>
+            <Headers/>
         </View>
       </View>
 
@@ -484,7 +485,7 @@ const styles = StyleSheet.create({
     // justifyItems:'center',
     backgroundColor: "#ffffff",
     width: 300,
-      marginLeft:10,
+    marginLeft:10,
     height: 36,
     borderWidth: 1,
     borderColor: "#085B26",

@@ -16,6 +16,8 @@ import ReturnButton from "../components/ReturnButton";
 import ShoppingCart from "../components/ShopingCart";
 import ItemCard from "../components/ItemCard";
 import Color from "../constants/Color";
+import ProfileBar from "../components/ProfileBar";
+import SearchBar from "../components/SearchBar"
 
 
 export default function ShopMainScreen({
@@ -52,22 +54,7 @@ export default function ShopMainScreen({
           <ReturnButton size={30} color={Color.fontGreen} />
         </TouchableOpacity>
 
-        <View style={styles.SearchBar}>
-          <Feather
-            name="search"
-            size={20}
-            color="#bdbdbd"
-            style={{ height: 36, paddingTop: 6, paddingLeft: 6 }}
-          />
-          <TextInput
-            placeholder="search goods"
-            style={{
-              backgroundColor: "transparent",
-              marginLeft: 5,
-              fontSize: 14,
-            }}
-          />
-        </View>
+          <SearchBar searchType={"search for items..."} />
         <Pressable onPress={() => navigation.navigate("CartScreen")}>
           <ShoppingCart size={30} color={Color.fontGreen} />
         </Pressable>
