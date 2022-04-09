@@ -9,7 +9,7 @@ import GreySeparator from "../components/GreySeparator"
 
 interface Props {
 }
-const Headers: FC<Props> = (props) => {
+const AppHeader: FC<Props> = (props) => {
   return (
       <Text style={styles.smallTitle}>BuyTogether</Text>
   )
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         color: "#085B26",
         fontWeight: "700",
         fontSize: 14,
+      alignSelf:"center"
     },
 })
-export default Headers;
+export default AppHeader;

@@ -13,35 +13,17 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Headers from "../components/Headers";
+import AppHeader from "../components/AppHeader";
 import {RandomAvatar} from "../components/DefaultAvatar";
 import {useNavigation} from "@react-navigation/native";
+import {Nav, STYLE} from "../constants/GeneralType";
 
 export default function MainPageScreen() {
   const { navigate } = useNavigation<Nav>();
   return (
-    <View style={styles.container}>
-      <View
-        style={{
-          backgroundColor: "#BEE4BE",
-          flexDirection: "row",
-          width: 150,
-          justifyContent: "space-around",
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: "#BEE4BE",
-            justifyContent: "center",
-            marginTop: 50,
-          }}
-        >
-            <Headers/>
-        </View>
-      </View>
-
+    <View style={STYLE.container}>
+      <AppHeader/>
       <View style={styles.header}>
-
         <View style={styles.SearchBar}>
           <Feather
             name="search"
@@ -74,6 +56,7 @@ export default function MainPageScreen() {
           justifyContent: "flex-start",
           marginTop: 5,
           width: 250,
+          alignSelf: "center"
         }}
       >
         <Ionicons
@@ -90,6 +73,7 @@ export default function MainPageScreen() {
       <View
         style={[
           styles.row,
+          {alignSelf:"center"},
           { padding: 5, justifyContent: "flex-start" },
           { backgroundColor: "#84A883", borderRadius: 15, width: 340 },
         ]}
@@ -473,8 +457,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     // justifyItems:'center',
     backgroundColor: "#ffffff",
-    width: 300,
-    marginLeft:10,
+    width: 280,
+    marginLeft:30,
     height: 36,
     borderWidth: 1,
     borderColor: "#085B26",
@@ -487,6 +471,7 @@ const styles = StyleSheet.create({
   },
 
   locationtext: {
+    alignSelf: "center",
     color: "#4A6563",
     textAlign: "center",
     fontSize: 12,

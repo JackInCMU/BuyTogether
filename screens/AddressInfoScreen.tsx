@@ -6,11 +6,12 @@ import Color from "../constants/Color";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import {SearchBarWithAutoComplete} from "../components/SearchBarWithAutoComplete";
 import {useNavigation} from "@react-navigation/native";
+import {STYLE} from "../constants/GeneralType";
 
 export default function AddressInfoScreen() {
   const navigation = useNavigation<any>();
   return (
-    <View style={styles.container}>
+    <View style={STYLE.container}>
       <View style={{ justifyContent: "center" }}>
         <View
           style={{

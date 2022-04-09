@@ -33,6 +33,8 @@ import MainPageScreen from "../screens/MainPageScreen";
 import Profile from "../screens/Profile";
 import AddressInfoScreen from "../screens/AddressInfoScreen";
 import PaymentInfoScreen from "../screens/PaymentInfoScreen";
+import MessageScreen from "../screens/MessageScreen";
+import OrderScreen from "../screens/OrderScreen";
 
 export default function Navigation({
   colorScheme,
@@ -119,7 +121,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Message"
-        component={AddressInfoScreen}
+        component={MessageScreen}
         options={{
           title: "Message",
           tabBarIcon: () => (
@@ -134,7 +136,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Order"
-        component={AddressInfoScreen}
+        component={OrderScreen}
         options={{
           title: "Order",
           tabBarIcon: () => (

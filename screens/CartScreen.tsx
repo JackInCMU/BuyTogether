@@ -8,6 +8,7 @@ import {RandomAvatar} from "../components/DefaultAvatar";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import NumericInput from "react-native-numeric-input";
 import {useNavigation} from "@react-navigation/native";
+import AppHeader from "../components/AppHeader";
 
 function CartNumericInput() {
   return  ( <NumericInput
