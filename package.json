@@ -35,6 +35,7 @@
     "react-native-gesture-handler": "~2.1.0",
     "react-native-google-places-autocomplete": "^2.4.1",
     "react-native-modal-dropdown": "^1.0.2",
+    "react-native-modal-dropdown": "^1.0.2",
     "react-native-numeric-input": "^1.9.1",
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "3.3.2",
