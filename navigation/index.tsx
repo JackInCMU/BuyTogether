@@ -19,7 +19,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
 import useColorScheme from "../hooks/useColorScheme";
-import ModalScreen from "../screens/AddressEditScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import {
   RootTabParamList,
@@ -33,7 +32,7 @@ import ShopMainScreen from "../screens/ShopMainScreen";
 import MainPageScreen from "../screens/MainPageScreen";
 import Profile from "../screens/Profile";
 import AddressInfoScreen from "../screens/AddressInfoScreen";
-import AddressEditScreen from "../screens/AddressEditScreen";
+import PaymentInfoScreen from "../screens/PaymentInfoScreen";
 
 export default function Navigation({
   colorScheme,
@@ -80,7 +79,8 @@ function RootNavigator() {
       <MainMenuStack.Screen name="ShopMainScreen" component={ShopMainScreen} />
       <MainMenuStack.Screen name="MainPageScreen" component={MainPageScreen} />
       <MainMenuStack.Screen name="Profile" component={Profile} />
-      <MainMenuStack.Screen name="AddressEditScreen" component={AddressEditScreen} />
+      <MainMenuStack.Screen name="AddressInfoScreen" component={AddressInfoScreen} />
+      <MainMenuStack.Screen name="PaymentInfoScreen" component={PaymentInfoScreen} />
     </MainMenuStack.Navigator>
   );
 }
@@ -110,7 +110,7 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="Main"
         component={MainPageScreen}
-        options={({ navigation }: RootTabScreenProps<"Main">) => ({
+        options={() => ({
           title: "Main",
           tabBarIcon: () => (
             <Ionicons name="home" size={30} color={Color.fontGreen} />
@@ -134,7 +134,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Order"
-        component={AddressEditScreen}
+        component={AddressInfoScreen}
         options={{
           title: "Order",
           tabBarIcon: () => (

@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-
 import { Text, View } from '../components/Themed';
-import { RootStackScreenProps } from '../types';
+import {useNavigation} from "@react-navigation/native";
 
-export default function NotFoundScreen({ navigation }: RootStackScreenProps<'NotFound'>) {
+export default function NotFoundScreen() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>This screen doesn't exist.</Text>

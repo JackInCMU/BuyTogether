@@ -7,7 +7,7 @@ import GreySeparator from "../components/GreySeparator";
 import {RandomAvatar} from "../components/DefaultAvatar";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import NumericInput from "react-native-numeric-input";
-import {RootTabScreenProps} from "../types";
+import {useNavigation} from "@react-navigation/native";
 
 function CartNumericInput() {
   return  ( <NumericInput
@@ -21,9 +21,8 @@ function CartNumericInput() {
   />)
 }
 
-export default function CartScreen({
-  navigation,
-}: RootTabScreenProps<"General">) {
+export default function CartScreen() {
+  const navigation  = useNavigation<any>();
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center" }}>

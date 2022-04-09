@@ -13,8 +13,10 @@ import { EvilIcons } from '@expo/vector-icons';
 import VipBar from "../components/VipBar";
 import ProfileBar from "../components/ProfileBar";
 import {RandomAvatar} from "../components/DefaultAvatar";
+import {useNavigation} from "@react-navigation/native";
 
-export default function Profile({ navigation, }: RootTabScreenProps<"General">) {
+export default function Profile() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       <View style={styles.header}>

@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   Image,
@@ -7,7 +7,6 @@ import {
   Pressable,
 } from "react-native";
 import { View, Text } from "../components/Themed";
-import { RootTabScreenProps } from "../types";
 import { ScaleSize } from "react-native-scale-size";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
@@ -16,10 +15,10 @@ import { Card } from "react-native-elements";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Headers from "../components/Headers";
 import {RandomAvatar} from "../components/DefaultAvatar";
+import {useNavigation} from "@react-navigation/native";
 
-export default function MainPageScreen({
-  navigation,
-}: RootTabScreenProps<"General">) {
+export default function MainPageScreen() {
+  const { navigate } = useNavigation<Nav>();
   return (
     <View style={styles.container}>
       <View
@@ -59,7 +58,7 @@ export default function MainPageScreen({
             }}
           ></TextInput>
         </View>
-        <Pressable onPress={() => navigation.navigate("CartScreen")}>
+        <Pressable onPress={() => navigate("CartScreen")}>
           <AntDesign
             name="shoppingcart"
             size={30}
@@ -211,7 +210,7 @@ export default function MainPageScreen({
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <TouchableOpacity
             activeOpacity={0.5}
-            onPress={() => navigation.navigate("ShopMainScreen")}
+            onPress={() => navigate("ShopMainScreen")}
           >
             <View
               style={[

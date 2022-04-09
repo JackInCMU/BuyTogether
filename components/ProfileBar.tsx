@@ -8,12 +8,6 @@ import ForwardButton from "../components/ForwardButton"
 import GreySeparator from "../components/GreySeparator"
 import { useNavigation } from '@react-navigation/native';
 
-type Nav = {
-  navigate: (value: string) => void;
-}
-
-
-
 interface Props {
 }
 const ProfileBar: FC<Props> = (props) => {
@@ -24,7 +18,7 @@ const ProfileBar: FC<Props> = (props) => {
       <View style={styles.bar}>
         <MaterialIcons name="location-pin" size={24} color={Color.fontGreen} />
         <Pressable style={{ backgroundColor: Color.white, width: 250, marginLeft: 20 }}
-        onPress={() => navigate("AddressEditScreen")}>
+        onPress={() => navigate("AddressInfoScreen")}>
           <Text style={{ fontSize: 18, fontWeight: "700", color: Color.fontGreen }}>Delivery Address</Text>
         </Pressable>
         <ForwardButton size={25} color={Color.fontGreen} />
@@ -33,9 +27,10 @@ const ProfileBar: FC<Props> = (props) => {
 
         <View style={styles.bar}>
           <Entypo name="credit-card" size={24} color={Color.fontGreen}/>
-          <View style={{backgroundColor: Color.white, width: 250, marginLeft: 20}}>
+          <Pressable style={{backgroundColor: Color.white, width: 250, marginLeft: 20}}
+                     onPress={() => navigate("PaymentInfoScreen")}>
             <Text style={{fontSize: 18, fontWeight: "700", color: Color.fontGreen}}>Payment Methods</Text>
-          </View>
+          </Pressable>
           <ForwardButton size={25} color={Color.fontGreen}/>
         </View>
         <GreySeparator/>

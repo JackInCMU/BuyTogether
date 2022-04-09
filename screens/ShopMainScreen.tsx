@@ -2,27 +2,22 @@ import React from "react";
 import {
   StyleSheet,
   Image,
-  TextInput,
   ScrollView,
   Pressable,
 } from "react-native";
 import { View, Text } from "../components/Themed";
-import { RootTabScreenProps } from "../types";
 import { ScaleSize } from "react-native-scale-size";
-import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ReturnButton from "../components/ReturnButton";
 import ShoppingCart from "../components/ShopingCart";
 import ItemCard from "../components/ItemCard";
 import Color from "../constants/Color";
-import ProfileBar from "../components/ProfileBar";
 import SearchBar from "../components/SearchBar"
+import {useNavigation} from "@react-navigation/native";
 
-
-export default function ShopMainScreen({
-  navigation,
-}: RootTabScreenProps<"General">) {
+export default function ShopMainScreen() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       <View

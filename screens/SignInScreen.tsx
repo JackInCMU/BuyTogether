@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Image, TextInput, Pressable } from 'react-native';
 import { Text, View } from '../components/Themed';
 import Color from '../constants/Color';
-import {RootTabScreenProps} from "../types";
 
 export default class SignInScreen extends React.Component<{ navigation: any }> {
   render() {
