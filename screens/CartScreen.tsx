@@ -9,6 +9,18 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import NumericInput from "react-native-numeric-input";
 import {RootTabScreenProps} from "../types";
 
+function CartNumericInput() {
+  return  ( <NumericInput
+    onChange={(value) => console.log(value)}
+    totalWidth={60}
+    totalHeight={30}
+    iconSize={25}
+    valueType="integer"
+    minValue={0}
+    maxValue={5}
+  />)
+}
+
 export default function CartScreen({
   navigation,
 }: RootTabScreenProps<"General">) {
@@ -96,14 +108,7 @@ export default function CartScreen({
               alignItems: "center",
             }}
           >
-            <NumericInput
-              onChange={(value) => console.log(value)}
-              totalWidth={60}
-              totalHeight={30}
-              iconSize={25}
-              valueType="integer"
-              minValue={0}
-            />
+            <CartNumericInput/>
           </View>
           <Text
             style={{
@@ -142,14 +147,7 @@ export default function CartScreen({
               alignItems: "center",
             }}
           >
-            <NumericInput
-              onChange={(value) => console.log(value)}
-              totalWidth={60}
-              totalHeight={30}
-              iconSize={25}
-              valueType="integer"
-              minValue={0}
-            />
+            <CartNumericInput/>
           </View>
           <Text
             style={{

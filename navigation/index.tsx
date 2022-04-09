@@ -80,7 +80,7 @@ function RootNavigator() {
       <MainMenuStack.Screen name="ShopMainScreen" component={ShopMainScreen} />
       <MainMenuStack.Screen name="MainPageScreen" component={MainPageScreen} />
       <MainMenuStack.Screen name="Profile" component={Profile} />
-      <MainMenuStack.Screen name="AddressInfoScreen" component={AddressInfoScreen} />
+      <MainMenuStack.Screen name="AddressEditScreen" component={AddressEditScreen} />
     </MainMenuStack.Navigator>
   );
 }

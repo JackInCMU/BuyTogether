@@ -42,7 +42,7 @@ export default function Profile({ navigation, }: RootTabScreenProps<"General">) 
         <Text style={{ color: Color.addressGreen, fontSize: 18 }}>angelica@gmail.com</Text>
       </View>
       <VipBar credit={1000} />
-      <ProfileBar />
+      <ProfileBar/>
       <View style={styles.button}>
         <Button
           onPress={() => Alert.alert("Log Out!")}
